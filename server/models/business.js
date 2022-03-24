@@ -1,8 +1,11 @@
 import mongoose from "mongoose";
 
 const businessSchema = mongoose.Schema({
-    name: String,
-    userID: String,
+    name: {
+        type: String,
+        unique: true
+    },
+    userEmail: String,
 });
 
 const business = mongoose.model('business', businessSchema);
